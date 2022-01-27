@@ -1,6 +1,7 @@
+import Home from "./pages/Home"
 const App = () =>{
     return <div>
-        Hello Word!
+        <Home/>
     </div>
 }
 export default App
