@@ -91,7 +91,7 @@ const Slider = () => {
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImageContainer>
-              <Image src={item.Image} />
+              <Image src={item.img} />
             </ImageContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
