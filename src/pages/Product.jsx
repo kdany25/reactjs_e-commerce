@@ -155,7 +155,7 @@ const Product = () => {
         <InfoContainer>
         <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
-          <Price>$ {product.price}</Price>
+          <Price>RWF {product.price}</Price>
 
           <FilterContainer>
             <Filter>

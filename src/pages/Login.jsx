@@ -8,11 +8,8 @@ import { login } from "../redux/apiCalls";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+  background: 
+    url("https://i.ibb.co/t8C1bC3/An-aerial-of-Kigali-Convention-Center-on-June-19-2019-Photo-by-Emmanuel-Kwizera.jpg")
       center;
   background-size: cover;
   display: flex;
@@ -25,13 +22,14 @@ const Wrapper = styled.div`
   padding: 20px;
   background-color: white;
   border-radius : 20px;
-  ${mobile({ width: "75%" })}
+  ${mobile({ width: "75%" })};
   
 `;
 
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
+  text-align : center;
 `;
 
 const Form = styled.form`
@@ -50,7 +48,7 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: teal;
+  background-color: green;
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
@@ -58,6 +56,8 @@ const Button = styled.button`
     color: green;
     cursor: not-allowed;
   }
+  border-radius : 10px;
+  margin-left :   6rem;
 `;
 
 const Link = styled.a`
@@ -82,6 +82,7 @@ const Login = () => {
   };
   return (
     <Container>
+      
     <Wrapper>
       <Title>SIGN IN</Title>
       <Form>
@@ -98,7 +99,6 @@ const Login = () => {
           LOGIN
         </Button>
         {error && <Error>Something went wrong...</Error>}
-        <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
         <Link>CREATE A NEW ACCOUNT</Link>
       </Form>
     </Wrapper>

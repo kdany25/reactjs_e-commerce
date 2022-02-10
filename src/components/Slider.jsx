@@ -27,8 +27,8 @@ const Arrow = styled.div`
   right: ${(props) => props.direction === "right" && "10px"};
   margin: auto;
   cursor: pointer;
-  opacity: 0.5;
   z-index: 2;
+  color: green;
 `;
 
 const Wrapper = styled.div`
@@ -96,12 +96,12 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOP NOW</Button>
+              <Button>SHOP NOW get 30% off</Button>
             </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleclick("left")}>
+      <Arrow direction="right" onClick={() => handleclick("right")}>
         <ArrowRightOutlined />
       </Arrow>
     </Container>

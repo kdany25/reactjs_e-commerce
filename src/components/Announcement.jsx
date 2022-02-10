@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Container = styled.div `
 height : 30px;
-background-color : teal;
+background-color : green;
 color: white;
 display : flex;
 align-items: center;
@@ -14,7 +14,7 @@ font-weight: 500;
 const Announcement = () => {
   return (
     <Container>
-      Super Deal! Free Shipping on orders Over $50
+      Super Deal! DISCOUNT ON EVERY PRODUCT -30%
     </Container>
   )
 }

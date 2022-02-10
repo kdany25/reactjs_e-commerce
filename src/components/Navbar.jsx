@@ -7,9 +7,9 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  height: 60px;
-  height: 60px;
+  height: 90px;
   ${mobile({ height: "50px" })}
+
 `;
 const Wrapper = styled.div`
   padding: 10px 20px;
@@ -24,36 +24,43 @@ const Left = styled.div`
   display: flex;
   align-items: center;
 `;
+
+const Logo = styled.img`
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-top : -0.4rem;
+  // border : 2px solid blue;
+  // font-weight: bold;
+  // ${mobile({ fontSize: "24px" })}
+`;
+const Center = styled.div`
+  flex: 1;
+  diplay : flex;
+
+`;
 const SearchContainer = styled.div`
   border: 1px solid lightgray;
   display: flex;
   align-items: center;
   margin-left: 25px;
-  padding: 5px;
+  padding: 6px;
+  justify-content : space-between;
+  margin-top : -2rem;
+
 `;
 const Input = styled.input`
   border: none;
+  width : 100%;
   ${mobile({ width: "50px" })}
 `;
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-  ${mobile({ display: "none" })}
-`;
-const Center = styled.div`
-  flex: 1;
-  text-align: center;
-`;
 
-const Logo = styled.h1`
-  font-weight: bold;
-  ${mobile({ fontSize: "24px" })}
-`;
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-top : -2rem;
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
@@ -69,18 +76,18 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>En</Language>
-          <SearchContainer>
-            <Input placeholder="search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+        <Logo src="https://i.ibb.co/FwPnxHN/logo.png"/>
         </Left>
         <Center>
-          <Logo>Ian.BOUTIQUE</Logo>
+          <SearchContainer>
+            <Input placeholder="search Product" />
+            <Search style={{ color: "gray", fontSize: 16 }} />
+          </SearchContainer>
+          {/* <Language>En</Language> */}
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>Sign Up</MenuItem>
+          <MenuItem>Sign IN</MenuItem>
           <Link to="/cart">
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
