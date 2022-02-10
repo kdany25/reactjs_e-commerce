@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  height: 60vh;
+  height: 30vh;
   background-color: #fcf5f5;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
-const Title = styled.h1`
+const Title = styled.h2`
   font-size: 70px;
 `;
 const Desc = styled.div`
@@ -37,19 +37,19 @@ const Input = styled.input`
 const Button = styled.button`
   flex: 1;
   border: none;
-  background-color: teal;
+  background-color: green;
   color: white;
 `;
 
 const Newsletter = () => {
   return (
     <Container>
-      <Title>Newletter</Title>
-      <Desc>Get timely updates from your favorite Products</Desc>
+      <Title>Subscribe</Title>
+      <Desc>Get updates on new Arrival Products</Desc>
       <InputContainer>
         <Input placeholder="Your Email" />
         <Button>
-          <Send />
+          <Send  />
         </Button>
       </InputContainer>
     </Container>

@@ -74,11 +74,10 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>Ian.Boutique</Logo>
+        <Logo>Myclikk</Logo>
         <Desc>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s,
+          To build a local online store with all Rwanda’s imports, where people
+          can find anything they might want to buy online.
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -97,9 +96,7 @@ const Footer = () => {
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
-          <ListItem>My account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>WishList</ListItem>
+          <ListItem>Shop</ListItem>
           <ListItem>Term</ListItem>
         </List>
       </Center>
@@ -115,7 +112,7 @@ const Footer = () => {
         </ContactItem>
         <ContactItem>
           <MailOutline style={{ marginRight: "10px" }} />
-          kabadany25@gmail.com
+          habzkamu@myclikk.rw
         </ContactItem>
       </Right>
     </Container>
