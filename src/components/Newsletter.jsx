@@ -1,7 +1,9 @@
 import { Send } from "@material-ui/icons";
-
+import { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { addSub } from "../redux/apiCalls";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div`
   height: 30vh;
@@ -42,13 +44,27 @@ const Button = styled.button`
 `;
 
 const Newsletter = () => {
+  const [inputs, setInputs] = useState({});
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setInputs((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+  const handleClick = (e) => {
+    e.preventDefault();
+    const ss = { ...inputs };
+    addSub(ss, dispatch);
+  }
+
   return (
     <Container>
       <Title>Subscribe</Title>
       <Desc>Get updates on new Arrival Products</Desc>
       <InputContainer>
-        <Input placeholder="Your Email" />
-        <Button>
+        <Input name="email" placeholder="Your Email" onChange={handleChange} />
+        <Button onClick={handleClick}>
           <Send  />
         </Button>
       </InputContainer>
