@@ -25,31 +25,6 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const Top = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-`;
-
-const TopButton = styled.button`
-  padding: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
-  background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
-`;
-
-const TopTexts = styled.div`
-  ${mobile({ display: "none" })}
-`;
-const TopText = styled.span`
-  text-decoration: underline;
-  cursor: pointer;
-  margin: 0px 10px;
-`;
 
 const Bottom = styled.div`
   display: flex;
@@ -59,6 +34,7 @@ const Bottom = styled.div`
 
 const Info = styled.div`
   flex: 3;
+  height: 45vh;
 `;
 
 const Product = styled.div`
@@ -75,6 +51,7 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
+  
 `;
 
 const Details = styled.div`
@@ -134,7 +111,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  height: 55vh;
 `;
 
 const SummaryTitle = styled.h1`
@@ -155,10 +132,12 @@ const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`
   width: 100%;
-  padding: 10px;
-  background-color: black;
+  padding: 12px;
+  background-color: #ca6b34;
   color: white;
   font-weight: 600;
+  border: none;
+  border-radius : 5px;
 `;
 
 const Cart = () => {
@@ -189,15 +168,8 @@ const Cart = () => {
       <Navbar />
       <Announcement />
       <Wrapper>
-        <Title>YOUR BAG</Title>
-        <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
-          </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
-        </Top>
+        <Title>CART</Title>
+        
         <Bottom>
           <Info>
             {cart.products.map((product) => (
@@ -229,25 +201,25 @@ const Cart = () => {
                 </PriceDetail>
               </Product>
             ))}
-            <Hr />
+            {/* <Hr /> */}
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} Rwf</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>0 Rwf</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>0 Rwf</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice> {cart.total} Rwf</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="Lama Shop"
