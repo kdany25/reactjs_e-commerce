@@ -13,6 +13,21 @@ import {  getSubscriberStart,
   addSubscriberSuccess,
   addSubscriberFailure,} from "./subRedux"
 
+  import {
+    getOrderStart,
+    getOrderSuccess,
+    getOrderFailure,
+    deleteOrderStart,
+    deleteOrderSuccess,
+    deleteOrderFailure,
+    updateOrderStart,
+    updateOrderSuccess,
+    updateOrderFailure,
+    addOrderStart,
+    addOrderSuccess,
+    addOrderFailure,
+  } from "./orderRedux"
+
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
@@ -62,5 +77,35 @@ export const addSub = async (subscriber, dispatch) => {
     dispatch(addSubscriberSuccess(res.data));
   } catch (err) {
     dispatch(addSubscriberFailure());
+  }
+};
+
+
+export const deleteOrder = async (id, dispatch) => {
+  dispatch(deleteOrderStart());
+  try {
+    const res = await userRequest.delete(`/order/${id}`);
+    dispatch(deleteOrderSuccess(res.data));
+  } catch (err) {
+    dispatch(deleteOrderFailure());
+  }
+};
+
+export const updateOrder = async (id, order, dispatch) => {
+  dispatch(updateOrderStart());
+  try {
+    // update
+    dispatch(updateOrderSuccess({ id, order }));
+  } catch (err) {
+    dispatch(updateOrderFailure());
+  }
+};
+export const addOrder = async (order, dispatch) => {
+  dispatch(addOrderStart());
+  try {
+    const res = await userRequest.post(`/order`, order);
+    dispatch(addOrderSuccess(res.data));
+  } catch (err) {
+    dispatch(addOrderFailure());
   }
 };
