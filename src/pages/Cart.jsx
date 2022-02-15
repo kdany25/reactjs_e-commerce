@@ -6,17 +6,23 @@ import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { userRequest } from "../requestMethod";
+import React, { userRequest } from "../requestMethod";
 import { useHistory } from "react-router";
 import StripeCheckout from "react-stripe-checkout";
-
+import Order from "../components/Order/Order";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
-const Container = styled.div``;
+const Container = styled.div`
+height : 100vh;
+margin-bottom: 20rem;
+`;
 
 const Wrapper = styled.div`
   padding: 20px;
+
+ 
+ 
   ${mobile({ padding: "10px" })}
 `;
 
@@ -24,7 +30,6 @@ const Title = styled.h1`
   font-weight: 300;
   text-align: center;
 `;
-
 
 const Bottom = styled.div`
   display: flex;
@@ -51,7 +56,6 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
-  
 `;
 
 const Details = styled.div`
@@ -100,18 +104,13 @@ const ProductPrice = styled.div`
   ${mobile({ marginBottom: "20px" })}
 `;
 
-const Hr = styled.hr`
-  background-color: #eee;
-  border: none;
-  height: 1px;
-`;
 
 const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 55vh;
+ 
 `;
 
 const SummaryTitle = styled.h1`
@@ -137,13 +136,15 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
   border: none;
-  border-radius : 5px;
+  border-radius: 5px;
 `;
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
+
+  const [modalOpen, setModalOpen] = useState(false);
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -158,18 +159,23 @@ const Cart = () => {
         });
         history.push("/success", {
           stripeData: res.data,
-          products: cart, });
+          products: cart,
+        });
       } catch {}
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
+
+  console.log(cart)
   return (
+    <>
     <Container>
+       {modalOpen && <Order setOpenModal={setModalOpen}  cart= {cart} />}
       <Navbar />
       <Announcement />
       <Wrapper>
         <Title>CART</Title>
-        
+
         <Bottom>
           <Info>
             {cart.products.map((product) => (
@@ -221,23 +227,22 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice> {cart.total} Rwf</SummaryItemPrice>
             </SummaryItem>
-            <StripeCheckout
-              name="Lama Shop"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
-              billingAddress
-              shippingAddress
-              description={`Your total is $${cart.total}`}
-              amount={cart.total * 100}
-              token={onToken}
-              stripeKey={KEY}
+
+            <Button
+              onClick={() => {
+                setModalOpen(true);
+              }}
             >
-              <Button>CHECKOUT NOW</Button>
-            </StripeCheckout>
+              CHECKOUT NOW
+            </Button>
           </Summary>
         </Bottom>
       </Wrapper>
-      <Footer />
+
+     
     </Container>
+     <Footer />
+     </>
   );
 };
 
