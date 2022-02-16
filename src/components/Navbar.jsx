@@ -6,6 +6,8 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { useState } from "react";
+
 const Container = styled.div`
   height: 90px;
   ${mobile({ height: "50px" })}
@@ -72,6 +74,13 @@ const MenuItem = styled.div`
 `;
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity)
+  const [name , setName] = useState();
+
+  const handleChange = (e) => {
+    setName(e.target.value) 
+  
+  
+  };
   return (
     <Container>
       <Wrapper>
@@ -80,10 +89,13 @@ const Navbar = () => {
         </Left>
         <Center>
           <SearchContainer>
-            <Input placeholder="search Product" />
+         
+            <Input placeholder="search Product" onChange={handleChange} />
+            <Link to={`/products/${name}`} >
             <Search style={{ color: "gray", fontSize: 16 }} />
+            </Link>
           </SearchContainer>
-          {/* <Language>En</Language> */}
+      
         </Center>
         <Right>
           <MenuItem>Sign Up</MenuItem>
