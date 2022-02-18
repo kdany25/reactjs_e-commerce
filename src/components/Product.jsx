@@ -4,7 +4,7 @@ import {
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import Rating from "./Rating";
 
 const Info = styled.div`
   opacity: 0;
@@ -24,7 +24,7 @@ const Container = styled.div`
   flex: 1;
   margin: 1rem;
   min-width: 280px;
-  height: 350px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@ const Container = styled.div`
   position: relative;
   &:hover ${Info} {
     opacity: 1;
-  };
+  }
   // -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 12px -10px rgba(0, 0, 0, 1);
 `;
@@ -47,6 +47,7 @@ const Circle = styled.div`
 const Image = styled.img`
   height: 75%;
   z-index: 2;
+  margin-bottom : 1rem;
 `;
 
 const Icon = styled.div`
@@ -54,7 +55,7 @@ const Icon = styled.div`
   height: 40px;
   border-radius: 50%;
   background-color: white;
-  color: #41f1b6  !important;
+  color: #41f1b6 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,11 +98,9 @@ const Name = styled.div`
 
 const Below = styled.div`
   display: flex;
-  margin-top: 1rem;
+  
 `;
 const Product = ({ item }) => {
-  
-
   return (
     <Container>
       <Circle />
@@ -110,10 +109,11 @@ const Product = ({ item }) => {
         <Name>{item.title}</Name>
         <Price>Price:{item.price} rwf</Price>
       </Below>
+      <Rating rating="3.5" numReviews="120"></Rating>
       <Cons>
         <Icon>
-        <Link to={`/product/${item._id}`} >
-          <ShoppingCartOutlined />
+          <Link to={`/product/${item._id}`} style={{ color: "red" }}>
+            <ShoppingCartOutlined />
           </Link>
         </Icon>
         <Iconn>

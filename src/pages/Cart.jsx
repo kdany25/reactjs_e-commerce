@@ -10,19 +10,18 @@ import React, { userRequest } from "../requestMethod";
 import { useHistory } from "react-router";
 import StripeCheckout from "react-stripe-checkout";
 import Order from "../components/Order/Order";
+import { Redirect } from "react-router-dom";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div`
-height : 100vh;
-margin-bottom: 20rem;
+  height: 100vh;
+  margin-bottom: 20rem;
 `;
 
 const Wrapper = styled.div`
   padding: 20px;
 
- 
- 
   ${mobile({ padding: "10px" })}
 `;
 
@@ -104,13 +103,11 @@ const ProductPrice = styled.div`
   ${mobile({ marginBottom: "20px" })}
 `;
 
-
 const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
- 
 `;
 
 const SummaryTitle = styled.h1`
@@ -141,6 +138,7 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user.currentUser);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
 
@@ -166,83 +164,82 @@ const Cart = () => {
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
 
-  console.log(cart)
+  console.log(cart);
   return (
     <>
-    <Container>
-       {modalOpen && <Order setOpenModal={setModalOpen}  cart= {cart} />}
-      <Navbar />
-      <Announcement />
-      <Wrapper>
-        <Title>CART</Title>
+      <Container>
+        {modalOpen && <Order setOpenModal={setModalOpen} cart={cart} />}
 
-        <Bottom>
-          <Info>
-            {cart.products.map((product) => (
-              <Product>
-                <ProductDetail>
-                  <Image src={product.img} />
-                  <Details>
-                    <ProductName>
-                      <b>Product:</b> {product.title}
-                    </ProductName>
-                    <ProductId>
-                      <b>ID:</b> {product._id}
-                    </ProductId>
-                    <ProductColor color={product.color} />
-                    <ProductSize>
-                      <b>Size:</b> {product.size}
-                    </ProductSize>
-                  </Details>
-                </ProductDetail>
-                <PriceDetail>
-                  <ProductAmountContainer>
-                    <Add />
-                    <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
-                  </ProductAmountContainer>
-                  <ProductPrice>
-                    $ {product.price * product.quantity}
-                  </ProductPrice>
-                </PriceDetail>
-              </Product>
-            ))}
-            {/* <Hr /> */}
-          </Info>
-          <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-            <SummaryItem>
-              <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>{cart.total} Rwf</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>0 Rwf</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>0 Rwf</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice> {cart.total} Rwf</SummaryItemPrice>
-            </SummaryItem>
+        <Navbar />
+        <Announcement />
+        <Wrapper>
+          <Title>CART</Title>
 
-            <Button
-              onClick={() => {
-                setModalOpen(true);
-              }}
-            >
-              CHECKOUT NOW
-            </Button>
-          </Summary>
-        </Bottom>
-      </Wrapper>
+          <Bottom>
+            <Info>
+              {cart.products.map((product) => (
+                <Product>
+                  <ProductDetail>
+                    <Image src={product.img} />
+                    <Details>
+                      <ProductName>
+                        <b>Product:</b> {product.title}
+                      </ProductName>
+                      <ProductId>
+                        <b>ID:</b> {product._id}
+                      </ProductId>
+                      <ProductColor color={product.color} />
+                      <ProductSize>
+                        <b>Size:</b> {product.size}
+                      </ProductSize>
+                    </Details>
+                  </ProductDetail>
+                  <PriceDetail>
+                    <ProductAmountContainer>
+                      <Add />
+                      <ProductAmount>{product.quantity}</ProductAmount>
+                      <Remove />
+                    </ProductAmountContainer>
+                    <ProductPrice>
+                      $ {product.price * product.quantity}
+                    </ProductPrice>
+                  </PriceDetail>
+                </Product>
+              ))}
+              {/* <Hr /> */}
+            </Info>
+            <Summary>
+              <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+              <SummaryItem>
+                <SummaryItemText>Subtotal</SummaryItemText>
+                <SummaryItemPrice>{cart.total} Rwf</SummaryItemPrice>
+              </SummaryItem>
+              <SummaryItem>
+                <SummaryItemText>Estimated Shipping</SummaryItemText>
+                <SummaryItemPrice>0 Rwf</SummaryItemPrice>
+              </SummaryItem>
+              <SummaryItem>
+                <SummaryItemText>Shipping Discount</SummaryItemText>
+                <SummaryItemPrice>0 Rwf</SummaryItemPrice>
+              </SummaryItem>
+              <SummaryItem type="total">
+                <SummaryItemText>Total</SummaryItemText>
+                <SummaryItemPrice> {cart.total} Rwf</SummaryItemPrice>
+              </SummaryItem>
 
-     
-    </Container>
-     <Footer />
-     </>
+              <Button
+                onClick={() => {
+                  setModalOpen(true);
+                }}
+              >
+                CHECKOUT NOW
+              </Button>
+            </Summary>
+          </Bottom>
+        </Wrapper>
+      </Container>
+      <Footer />
+    </>
   );
 };
 

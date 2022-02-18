@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+};
+
+a:visited {
+    color: black;
+}
+
+.rating span {
+  color: #ffbb00;
+  margin: 0.1rem;
+}
+.rating span:last-child {
+  color: #404040;
+}
