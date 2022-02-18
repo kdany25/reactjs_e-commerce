@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
+import NewArrivals from "../components/NewArrivals";
 const Tit = styles.h1`
 width: 100%; 
 text-align: center; 
@@ -28,6 +29,8 @@ const Home = () => {
       <Navbar />
       <Slider />
       <Categories />
+      <Tit><Sp>New Arrivals</Sp></Tit>
+      <NewArrivals/>
       <Tit><Sp>Trending products</Sp></Tit>
       <Products />
       <Newsletter />
