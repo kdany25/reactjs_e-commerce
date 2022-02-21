@@ -22,14 +22,8 @@ const Products = ({ cat, filters, sort }) => {
             ? `https://myclikkbackend.herokuapp.com/api/products?category=${cat}`
             : "https://myclikkbackend.herokuapp.com/api/products"
         );
-        setProducts(res.data);
-      } catch (err) {}
-    };
-    getProducts();
-  }, [cat]);
-
-  useEffect(() => {
-    cat &&
+       
+        cat &&
       setFilteredProducts(
         products.filter((item) =>
           Object.entries(filters).every(([key, value]) =>
@@ -37,7 +31,11 @@ const Products = ({ cat, filters, sort }) => {
           )
         )
       );
-  }, [products, cat, filters]);
+        setProducts(res.data);
+      } catch (err) {}
+    };
+    getProducts();
+  }, [cat]);
 
   useEffect(() => {
     if (sort === "newest") {
@@ -54,14 +52,13 @@ const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
-  console.log(filteredProducts)
   return (
     <Container>
     {cat
-      ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+      ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
       : products
           .slice(0, 8)
-          .map((item) => <Product item={item} key={item.id} />)}
+          .map((item) => <Product item={item} key={item._id} />)}
   </Container>
   );
 };
