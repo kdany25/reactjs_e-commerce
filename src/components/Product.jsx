@@ -47,7 +47,7 @@ const Circle = styled.div`
 const Image = styled.img`
   height: 75%;
   z-index: 2;
-  margin-bottom : 1rem;
+  margin-bottom: 1rem;
 `;
 
 const Icon = styled.div`
@@ -90,15 +90,22 @@ const Cons = styled.div`
 
 const Price = styled.div`
   margin-left: 1rem;
+  font-weight: 600;
 `;
 
 const Name = styled.div`
   font-weight: 600;
+  margin-left: 0rem;
 `;
 
 const Below = styled.div`
   display: flex;
-  
+  justify-content: space-between;
+`;
+const Rat = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 const Product = ({ item }) => {
   return (
@@ -107,9 +114,11 @@ const Product = ({ item }) => {
       <Image src={item.img} />
       <Below>
         <Name>{item.title}</Name>
-        <Price>Price:{item.price} rwf</Price>
+        <Price>{item.price}rwf</Price>
       </Below>
-      <Rating rating="3.5" numReviews="120"></Rating>
+      <Rat>
+        <Rating rating="3.5" numReviews="120"></Rating>
+      </Rat>
       <Cons>
         <Icon>
           <Link to={`/product/${item._id}`} style={{ color: "red" }}>

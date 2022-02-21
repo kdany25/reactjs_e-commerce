@@ -11,5 +11,6 @@ a:visited {
   margin: 0.1rem;
 }
 .rating span:last-child {
-  color: #404040;
+  color: #645f5f;
+  font-size: 13px;
 }
