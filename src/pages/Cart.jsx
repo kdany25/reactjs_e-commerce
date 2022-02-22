@@ -1,14 +1,13 @@
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import React, { userRequest } from "../requestMethod";
-import { useHistory } from "react-router";
 import Order from "../components/Order/Order";
+import { RemoveProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div`
   height: 100vh;
@@ -134,30 +133,17 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const [stripeToken, setStripeToken] = useState(null);
-  const history = useHistory();
-
   const [modalOpen, setModalOpen] = useState(false);
+  const [product, setProduct] = useState({});
+  const dispatch = useDispatch();
 
-  const onToken = (token) => {
-    setStripeToken(token);
+  const handleClick = () => {
+    dispatch(
+      RemoveProduct({ product })
+    );
   };
 
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = await userRequest.post("/checkout/payment", {
-          tokenId: stripeToken.id,
-          amount: 500,
-        });
-        history.push("/success", {
-          stripeData: res.data,
-          products: cart,
-        });
-      } catch {}
-    };
-    stripeToken && makeRequest();
-  }, [stripeToken, cart.total, history]);
+
   return (
     <>
       <Container>
@@ -170,8 +156,8 @@ const Cart = () => {
 
           <Bottom>
             <Info>
-              {cart.products.map((product) => (
-                <Product>
+              {cart.products.map((product, index) => (
+                <Product key={index}>
                   <ProductDetail>
                     <Image src={product.img} />
                     <Details>
@@ -189,9 +175,9 @@ const Cart = () => {
                   </ProductDetail>
                   <PriceDetail>
                     <ProductAmountContainer>
-                      <Add />
+                      <Add onClick={ product.quantity+1}/>
                       <ProductAmount>{product.quantity}</ProductAmount>
-                      <Remove />
+                      <Remove onClick={ product.quantity -1} />
                     </ProductAmountContainer>
                     <ProductPrice>
                       Rwf {product.price * product.quantity}
@@ -231,7 +217,7 @@ const Cart = () => {
           </Bottom>
         </Wrapper>
       </Container>
-      <Footer />
+  
     </>
   );
 };
