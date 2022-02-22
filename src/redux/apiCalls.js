@@ -1,5 +1,5 @@
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
-import { publicRequest , userRequest } from "../requestMethod";
+import { publicRequest } from "../requestMethod";
 import {  getSubscriberStart,
   getSubscriberSuccess,
   getSubscriberFailure,
@@ -14,9 +14,6 @@ import {  getSubscriberStart,
   addSubscriberFailure,} from "./subRedux"
 
   import {
-    getOrderStart,
-    getOrderSuccess,
-    getOrderFailure,
     deleteOrderStart,
     deleteOrderSuccess,
     deleteOrderFailure,
@@ -44,7 +41,7 @@ export const login = async (dispatch, user) => {
 export const getSub = async (dispatch) => {
   dispatch(getSubscriberStart());
   try {
-    const res = await userRequest.get("/sub");
+    const res = await publicRequest.get("/sub");
     dispatch(getSubscriberSuccess(res.data));
   } catch (err) {
     dispatch(getSubscriberFailure());
@@ -54,7 +51,7 @@ export const getSub = async (dispatch) => {
 export const deleteSub = async (id, dispatch) => {
   dispatch(deleteSubscriberStart());
   try {
-    const res = await userRequest.delete(`/sub/${id}`);
+    const res = await publicRequest.delete(`/sub/${id}`);
     dispatch(deleteSubscriberSuccess(res.data));
   } catch (err) {
     dispatch(deleteSubscriberFailure());
@@ -73,7 +70,7 @@ export const updateSub = async (id, subscriber, dispatch) => {
 export const addSub = async (subscriber, dispatch) => {
   dispatch(addSubscriberStart());
   try {
-    const res = await userRequest.post(`/sub`, subscriber);
+    const res = await publicRequest.post(`/sub`, subscriber);
     dispatch(addSubscriberSuccess(res.data));
   } catch (err) {
     dispatch(addSubscriberFailure());
@@ -84,7 +81,7 @@ export const addSub = async (subscriber, dispatch) => {
 export const deleteOrder = async (id, dispatch) => {
   dispatch(deleteOrderStart());
   try {
-    const res = await userRequest.delete(`/order/${id}`);
+    const res = await publicRequest.delete(`/order/${id}`);
     dispatch(deleteOrderSuccess(res.data));
   } catch (err) {
     dispatch(deleteOrderFailure());
@@ -103,7 +100,7 @@ export const updateOrder = async (id, order, dispatch) => {
 export const addOrder = async (order, dispatch) => {
   dispatch(addOrderStart());
   try {
-    const res = await userRequest.post(`/order`, order);
+    const res = await publicRequest.post(`/order`, order);
     dispatch(addOrderSuccess(res.data));
   } catch (err) {
     dispatch(addOrderFailure());

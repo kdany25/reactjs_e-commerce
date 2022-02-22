@@ -27,6 +27,7 @@ export default function Order({ setOpenModal, cart }) {
       amount: cart.total,
     };
     addOrder(order, dispatch);
+    setOpenModal(false);
   };
   return (
  <>
@@ -87,6 +88,7 @@ export default function Order({ setOpenModal, cart }) {
             Cancel
           </button>
           <button onClick={handleClick}>Continue</button>
+         
         </div>
       </div>
     </div>  
