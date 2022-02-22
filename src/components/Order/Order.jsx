@@ -24,14 +24,13 @@ export default function Order({ setOpenModal, cart }) {
     const order = {
       ...inputs,
       products: cart.products,
-      user,
       amount: cart.total,
     };
     addOrder(order, dispatch);
   };
   return (
  <>
-   { user ? <div className="modalBackground">
+   <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
@@ -46,6 +45,22 @@ export default function Order({ setOpenModal, cart }) {
         <div className="newUser">
           <h1 className="newUserTitle">Place Order</h1>
           <form className="newUserForm">
+          <div className="newUserItem">
+              <label>Full Name</label>
+              <input
+                name="name"
+                type="text"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="newUserItem">
+              <label>Email</label>
+              <input
+                name="email"
+                type="text"
+                onChange={handleChange}
+              />
+            </div>
             <div className="newUserItem">
               <label>Phone</label>
               <input name="phone" type="text" placeholder="+250788730199" />
@@ -74,7 +89,7 @@ export default function Order({ setOpenModal, cart }) {
           <button onClick={handleClick}>Continue</button>
         </div>
       </div>
-    </div> : <div></div>}
+    </div>  
  </>
   );
 }

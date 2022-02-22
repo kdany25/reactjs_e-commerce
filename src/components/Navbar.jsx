@@ -6,7 +6,6 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 import { useState } from "react";
 
 const Container = styled.div`
@@ -91,32 +90,13 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          {user ? (
-            <Link to="/cart">
-              <MenuItem style={{ color: "green" }}>
-                <Badge badgeContent={quantity}  color="primary">
-                  <ShoppingCartOutlined />
-                </Badge>
-              </MenuItem>
-            </Link>
-          ) : (
-            <>
-              {" "}
-              <Link to="/register"  style={{ color: "black" }}>
-                <MenuItem >Sign Up</MenuItem>
-              </Link>
-              <Link to="/login">
-                <MenuItem style={{ color: "black" }}>Sign In</MenuItem>
-              </Link>
-              <Link to="/cart">
-                <MenuItem style={{ color: "green" }}>
-                  <Badge badgeContent={quantity} color="primary">
-                    <ShoppingCartOutlined  />
-                  </Badge>
-                </MenuItem>
-              </Link>
-            </>
-          )}
+          <Link to="/cart">
+            <MenuItem style={{ color: "green" }}>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>
