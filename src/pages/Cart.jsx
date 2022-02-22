@@ -8,11 +8,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import React, { userRequest } from "../requestMethod";
 import { useHistory } from "react-router";
-import StripeCheckout from "react-stripe-checkout";
 import Order from "../components/Order/Order";
-import { Redirect } from "react-router-dom";
-
-const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div`
   height: 100vh;
@@ -138,7 +134,6 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const user = useSelector((state) => state.user.currentUser);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
 
@@ -163,8 +158,6 @@ const Cart = () => {
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
-
-  console.log(cart);
   return (
     <>
       <Container>
@@ -201,12 +194,12 @@ const Cart = () => {
                       <Remove />
                     </ProductAmountContainer>
                     <ProductPrice>
-                      $ {product.price * product.quantity}
+                      Rwf {product.price * product.quantity}
                     </ProductPrice>
                   </PriceDetail>
                 </Product>
               ))}
-              {/* <Hr /> */}
+           
             </Info>
             <Summary>
               <SummaryTitle>ORDER SUMMARY</SummaryTitle>
