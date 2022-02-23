@@ -138,19 +138,16 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(
-      RemoveProduct({ product })
-    );
+    dispatch(RemoveProduct({ product }));
   };
-
 
   return (
     <>
       <Container>
         {modalOpen && <Order setOpenModal={setModalOpen} cart={cart} />}
 
-        <Navbar />
         <Announcement />
+        <Navbar />
         <Wrapper>
           <Title>CART</Title>
 
@@ -175,9 +172,9 @@ const Cart = () => {
                   </ProductDetail>
                   <PriceDetail>
                     <ProductAmountContainer>
-                      <Add onClick={ product.quantity+1}/>
+                      <Add onClick={product.quantity + 1} />
                       <ProductAmount>{product.quantity}</ProductAmount>
-                      <Remove onClick={ product.quantity -1} />
+                      <Remove onClick={product.quantity - 1} />
                     </ProductAmountContainer>
                     <ProductPrice>
                       Rwf {product.price * product.quantity}
@@ -185,7 +182,6 @@ const Cart = () => {
                   </PriceDetail>
                 </Product>
               ))}
-           
             </Info>
             <Summary>
               <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -194,7 +190,9 @@ const Cart = () => {
                 <SummaryItemPrice>{cart.total} Rwf</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Estimated Time Shipping (Kigali)</SummaryItemText>
+                <SummaryItemText>
+                  Estimated Time Shipping (Kigali)
+                </SummaryItemText>
                 <SummaryItemPrice>40 min</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
@@ -217,7 +215,6 @@ const Cart = () => {
           </Bottom>
         </Wrapper>
       </Container>
-  
     </>
   );
 };
