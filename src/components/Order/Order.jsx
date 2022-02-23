@@ -67,11 +67,11 @@ export default function Order({ setOpenModal, cart }) {
               <input name="phone" type="text" placeholder="+250788730199" onChange={handleChange} />
             </div>
             <div className="newUserItem">
-              <label>Address</label>
+              <label>Address&street</label>
               <input
                 name="address"
                 type="text"
-                placeholder="Kigali | Rwanda"
+                placeholder="KN234 | Nyamirambo"
                 onChange={handleChange}
               />
             </div>

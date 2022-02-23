@@ -25,6 +25,10 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  &:hover {
+    transform: scale(1.5);
+  }
+  border : 2px solid blue;
   ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`

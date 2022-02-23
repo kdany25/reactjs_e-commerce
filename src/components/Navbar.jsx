@@ -31,7 +31,7 @@ const Logo = styled.img`
   height: 65px;
   object-fit: cover;
   margin-top: -0.4rem;
-  ${mobile({ fontSize: "24px" })}
+  ${mobile({ fontSize: "18px" })}
 `;
 const Center = styled.div`
   flex: 1;
@@ -48,6 +48,7 @@ const SearchContainer = styled.div`
 `;
 const Input = styled.input`
   border: none;
+  padding: 8px;
   width: 100%;
   ${mobile({ width: "50px" })}
 `;
@@ -79,7 +80,9 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
+        <Link to={`/`}>
           <Logo src="https://i.ibb.co/9qPTq4M/Untitled-4-copy.png" />
+          </Link>
         </Left>
         <Center>
           <SearchContainer>

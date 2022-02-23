@@ -52,10 +52,16 @@ const Newsletter = () => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+
+  const cancelCourse = () => { 
+    document.querySelectorAll('input').reset();
+  }
   const handleClick = (e) => {
     e.preventDefault();
     const ss = { ...inputs };
     addSub(ss, dispatch);
+    cancelCourse();
+
   }
 
   return (
@@ -63,7 +69,7 @@ const Newsletter = () => {
       <Title>Subscribe</Title>
       <Desc>Get updates on new Arrival Products</Desc>
       <InputContainer>
-        <Input name="email" placeholder="Your Email" onChange={handleChange} />
+        <Input name="email" placeholder="Your Email" id="em" onChange={handleChange} />
         <Button onClick={handleClick}>
           <Send  />
         </Button>
