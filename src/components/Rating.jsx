@@ -52,18 +52,18 @@ export default function Rating(props) {
         <i
           className={
             rating >= 5
-              ? 'fa fa-star'
+              ? 'fa fa-star' 
               : rating >= 4.5
               ? 'fa fa-star-half-o'
               : 'fa fa-star-o'
           }
         ></i>
       </span>
-      {caption ? (
+      {/* {caption ? (
         <span>{caption}</span>
       ) : (
         <span>{numReviews + ' reviews'}</span>
-      )}
+      )} */}
     </div>
   );
 }

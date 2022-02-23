@@ -1,10 +1,10 @@
 import {
-  FavoriteBorderOutlined,
   ShoppingCartOutlined,
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
+
 
 const Info = styled.div`
   opacity: 0;
@@ -45,16 +45,16 @@ const Circle = styled.div`
   position: absolute;
 `;
 const Image = styled.img`
-  height: 75%;
+  height: 70%;
   z-index: 2;
   margin-bottom: 1rem;
 `;
 
 const Icon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background-color: white;
+  background-color: rgb(3, 179, 120);
   color: #41f1b6 !important;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@ const Iconn = styled.div`
   height: 40px;
   border-radius: 50%;
   background-color: white;
-  color: green;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,11 +86,15 @@ const Iconn = styled.div`
 
 const Cons = styled.div`
   display: flex;
+  justify-content: space-between;
+  width : 100%;
 `;
 
 const Price = styled.div`
-  margin-left: 1rem;
-  font-weight: 600;
+  display : flex;
+  font-weight : 700;
+  font-size : 18px;
+  margin-left : 1.5rem
 `;
 
 const Name = styled.div`
@@ -104,31 +108,35 @@ const Below = styled.div`
 `;
 const Rat = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  width : 100%
+
 `;
 const Product = ({ item }) => {
   return (
     <Container>
-      <Circle />
       <Image src={item.img} />
       <Below>
+      <Link to={`/product/${item._id}`} style={{ color: "black" }} >
         <Name>{item.title}</Name>
-        <Price>{item.price}rwf</Price>
+        </Link>
       </Below>
       <Rat>
-        <Rating rating="3.5" numReviews="120"></Rating>
+        <Rating rating="3.5" ></Rating>
       </Rat>
+
       <Cons>
+      <Iconn>
+      <Price>{item.price}rwf</Price>
+      </Iconn>
         <Icon>
-          <Link to={`/product/${item._id}`} style={{ color: "red" }}>
-            <ShoppingCartOutlined />
+          <Link to={`/product/${item._id}`} style={{ color: "white" }}>
+            <ShoppingCartOutlined  />
           </Link>
         </Icon>
-        <Iconn>
-          <FavoriteBorderOutlined />
-        </Iconn>
+       
       </Cons>
+
     </Container>
   );
 };

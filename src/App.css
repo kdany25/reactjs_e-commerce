@@ -14,3 +14,7 @@ a:visited {
   color: #645f5f;
   font-size: 13px;
 }
+
+.fg {
+  color: rgb(3, 179, 120);
+}
