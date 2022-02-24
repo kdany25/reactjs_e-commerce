@@ -5,6 +5,7 @@ import {
   Phone,
   Room,
   Twitter,
+  WhatsApp
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
@@ -90,6 +91,14 @@ const Right = styled.div`
   ${mobile({ backgroundColor: "#fff8f8" })}
 `;
 
+const Rights = styled.div`
+  flex: 1;
+  padding: 20px;
+  margin-left : 30rem;
+  font-size : 12px;
+  ${mobile({ backgroundColor: "#fff8f8" })}
+`;
+
 const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
@@ -142,6 +151,14 @@ const Footer = () => {
                 <Twitter />
               </SocialIcon>
             </Link>
+            <Link
+              to={{ pathname: "https://wa.me/+250785918849" }}
+              target="_blank"
+            >
+              <SocialIcon color= "05a535">
+                <WhatsApp />
+              </SocialIcon>
+            </Link>
           </SocialContainer>
         </Left>
         <Center>
@@ -181,9 +198,9 @@ const Footer = () => {
          <Logoo src="https://i.ibb.co/BqkQ95s/28-280270-mtn-ghana-records-gh-u00a256b-in-mobile-money.jpg" />
           </Link>
         </Lefts>
-        <Centers>
+        <Rights>
         copyright 2022 Myclikk-All Right reserved
-        </Centers>
+        </Rights>
       
       </Foo>
     </>
