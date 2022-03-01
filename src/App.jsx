@@ -8,7 +8,8 @@ import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css"
+import About from "./pages/About-Us";
+import "./App.css";
 
 import {
   BrowserRouter as Router,
@@ -21,10 +22,13 @@ const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (
     <Router>
-              <ToastContainer />
+      <ToastContainer />
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/products">
           <ProductList />
@@ -42,14 +46,18 @@ const App = () => {
           <Success />
         </Route>
 
+        <Route path="/about">
+          <About />
+        </Route>
+
         <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/register">
           {user ? <Redirect to="/" /> : <SignUp />}
         </Route>
         <Route path="/not-found">
-          <NotFound/>
+          <NotFound />
         </Route>
-        <Redirect to="/not-found"/>
+        <Redirect to="/not-found" />
       </Switch>
     </Router>
   );

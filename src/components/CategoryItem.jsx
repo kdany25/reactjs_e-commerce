@@ -29,6 +29,7 @@ const Info = styled.h1`
 const Title = styled.div`
   color: white;
   margin-bottom: 20px;
+  background: #100f66;
 `;
 const Button = styled.button`
 border: none;
