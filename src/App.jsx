@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Success from "./pages/Success";
+import NotFound from "./pages/NotFound";
 import "./App.css"
 
 import {
@@ -42,6 +43,10 @@ const App = () => {
         <Route path="/register">
           {user ? <Redirect to="/" /> : <SignUp />}
         </Route>
+        <Route path="/not-found">
+          <NotFound/>
+        </Route>
+        <Redirect to="/not-found"/>
       </Switch>
     </Router>
   );
