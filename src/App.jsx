@@ -21,6 +21,7 @@ const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (
     <Router>
+              <ToastContainer />
       <Switch>
         <Route exact path="/">
           <Home />

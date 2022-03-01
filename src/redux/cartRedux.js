@@ -13,6 +13,9 @@ const cartSlice = createSlice({
       state.quantity += 1;
       state.products.push(action.payload);
       state.total += action.payload.price * action.payload.quantity;
+      toast.success("Added to cart", {
+        position: "top-right",
+      });
     },
     RemoveProduct: (state, action) => {
       state.quantity -= 1;
@@ -58,7 +61,7 @@ const cartSlice = createSlice({
       if (state.products[itemIndex].quantity > 1) {
         state.products[itemIndex].quantity += 1;
 
-        toast.info("Decreased product quantity", {
+        toast.success("you added qantity of product", {
           position: "bottom-left",
         });
       } 
