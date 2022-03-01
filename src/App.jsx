@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css"
 
 import {

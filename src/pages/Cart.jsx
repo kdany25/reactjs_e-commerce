@@ -1,4 +1,4 @@
-import { CancelOutlined } from "@material-ui/icons";
+import { Add, Remove, CancelOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
@@ -6,9 +6,9 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Order from "../components/Order/Order";
-import { RemoveProduct } from "../redux/cartRedux";
+import { RemoveProduct, decreaseCart, increaseCart } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
-
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 100vh;
@@ -17,7 +17,6 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   padding: 20px;
-
   ${mobile({ padding: "10px" })}
 `;
 
@@ -132,14 +131,41 @@ const Button = styled.button`
   border-radius: 5px;
 `;
 
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+`;
+
+const TopButton = styled.button`
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: ${(props) => props.type === "filled" && "none"};
+  background-color: ${(props) =>
+    props.type === "filled" ? "black" : "transparent"};
+  color: ${(props) => props.type === "filled" && "white"};
+`;
+
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
+
   const handleClick = (product) => {
     dispatch(RemoveProduct(product));
   };
 
+  const handleDecreaseCart = (product) => {
+    dispatch(decreaseCart(product));
+  };
+
+  const handleIncreaseCart = (product) => {
+    dispatch(increaseCart(product));
+  };
 
   return (
     <>
@@ -150,7 +176,11 @@ const Cart = () => {
         <Navbar />
         <Wrapper>
           <Title>CART</Title>
-
+          <Top>
+            <Link to="/products" style={{ color: "black" }}>
+              <TopButton>CONTINUE SHOPPING</TopButton>
+            </Link>
+          </Top>
           <Bottom>
             <Info>
               {cart.products.map((product, index) => (
@@ -158,13 +188,13 @@ const Cart = () => {
                   <ProductDetail>
                     <Image src={product.img} />
                     <Details>
-                      <ProductName>
-                        <b>Product:</b> {product.title}
-                      </ProductName>
                       <ProductId>
                         <b>ID:</b> {product._id}
                       </ProductId>
-                      <ProductColor color={product.color} />
+                      <ProductName>
+                        <b>Product:</b> {product.title}
+                      </ProductName>
+                      <ProductColor color={product.color}></ProductColor>
                       <ProductSize>
                         <b>Size:</b> {product.size}
                       </ProductSize>
@@ -172,7 +202,13 @@ const Cart = () => {
                   </ProductDetail>
                   <PriceDetail>
                     <ProductAmountContainer>
-                      <CancelOutlined onClick={()=>handleClick(product)} />
+                      <Add onClick={() => handleIncreaseCart(product)} />
+                      <ProductAmount>{product.quantity}</ProductAmount>
+                      <Remove onClick={() => handleDecreaseCart(product)} />
+                    </ProductAmountContainer>
+
+                    <ProductAmountContainer>
+                      <CancelOutlined onClick={() => handleClick(product)} />
                     </ProductAmountContainer>
                     <ProductPrice>
                       Rwf {product.price * product.quantity}

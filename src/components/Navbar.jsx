@@ -88,7 +88,7 @@ const Navbar = () => {
           <SearchContainer>
             <Input placeholder="search Product" onChange={handleChange} />
             <Link to={`/products/${name}`}>
-              <Search style={{ color: "gray", fontSize: 16}} />
+              <Search style={{ color: "gray", fontSize: 25}} />
             </Link>
           </SearchContainer>
         </Center>
