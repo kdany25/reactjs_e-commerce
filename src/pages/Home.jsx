@@ -9,8 +9,9 @@ import Products from "../components/Products";
 import Slider from "../components/Slider";
 import NewArrivals from "../components/NewArrivals";
 const Tit = styles.h1`
-width: 100%; 
-text-align: center; 
+width: 40%; 
+align-items : center;
+justify-content : center;
 border-bottom: 1px solid #000; 
 line-height: 0.1em;
 margin: 10px 0 20px; 
@@ -30,6 +31,7 @@ const Home = () => {
       <Slider />
       <Tit><Sp>New Arrivals</Sp></Tit>
       <NewArrivals/>
+      <Tit><Sp>Categories</Sp></Tit>
        <Categories />
       <Tit><Sp>Trending products</Sp></Tit>
       <Products />
