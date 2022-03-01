@@ -36,10 +36,10 @@ const Logo = styled.img`
 `;
 
 const Logoo = styled.img`
-  width: 75px;
-  height: 35px;
+  width: 80px;
+  height: 40px;
   margin-top : -30px;
-  ${mobile({ fontSize: "24px" })}
+  ${mobile({ fontSize: "25px" })}
 `;
 const Desc = styled.p`
   margin: 20px 0px;

@@ -26,25 +26,25 @@ export const categories = [
   {
     id: 1,
     img: "https://i.ibb.co/3z8N6hw/pexels-karolina-grabowska-6920411.jpg",
-    title: "Heels!",
+    title: "Heels",
     cat: "women",
   },
   {
     id: 2,
     img: "https://i.ibb.co/FBzTwN2/Ue8af4926327d414cb50b051b11646348-G.jpg",
-    title: "HOODIES",
+    title: "Hoodies",
     cat: "hoodie",
   },
   {
     id: 3,
     img: "https://i.ibb.co/CWfyRtt/NIKE-AIR-JORDAN-4-LIGHTNING-CT8527-700-1.jpg",
-    title: "SNEAKERS",
+    title: "Sneakers",
     cat: "shoes",
   },
   {
     id: 4,
     img: "https://i.ibb.co/Rc8ZKSj/jd-389512-a.jpg",
-    title: "CAP!",
+    title: "Cap",
     cat: "cap",
   },
 ];

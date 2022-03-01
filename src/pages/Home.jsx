@@ -15,7 +15,7 @@ justify-content : center;
 border-bottom: 1px solid #000; 
 line-height: 0.1em;
 margin: 10px 0 20px; 
-margin-top: 2rem;
+margin-top: 1rem;
 `;
 
 const Sp = styles.span`

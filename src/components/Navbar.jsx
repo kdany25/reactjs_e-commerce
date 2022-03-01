@@ -70,7 +70,6 @@ const MenuItem = styled.div`
 `;
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
-  const user = useSelector((state) => state.user.currentUser);
   const [name, setName] = useState();
 
   const handleChange = (e) => {
