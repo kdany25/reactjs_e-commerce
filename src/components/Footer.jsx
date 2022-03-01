@@ -173,6 +173,9 @@ const Footer = () => {
             <Link to="/products" style={{ color: "black" }}>
               <ListItem>Products</ListItem>
             </Link>
+            <Link to="/about" style={{ color: "black" }}>
+              <ListItem>About-us</ListItem>
+            </Link>
           </List>
         </Center>
         <Right>

@@ -28,9 +28,9 @@ const Home = () => {
       <Announcement />
       <Navbar />
       <Slider />
-      <Categories />
       <Tit><Sp>New Arrivals</Sp></Tit>
       <NewArrivals/>
+       <Categories />
       <Tit><Sp>Trending products</Sp></Tit>
       <Products />
       <Newsletter />
