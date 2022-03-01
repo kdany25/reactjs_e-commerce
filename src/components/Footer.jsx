@@ -123,7 +123,7 @@ const Footer = () => {
             <Logo src="https://i.ibb.co/9qPTq4M/Untitled-4-copy.png" />
           </Link>
           <Desc>
-            To build a local online store with all Rwanda’s imports, where
+           local online store with all Rwanda’s imports, where
             people can find anything they might want to buy online.
           </Desc>
           <SocialContainer>

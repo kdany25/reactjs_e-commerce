@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -16,11 +17,56 @@ const cartSlice = createSlice({
     RemoveProduct: (state, action) => {
       state.quantity -= 1;
       const nextCart= state.products.filter(product => product._id !== action.payload._id);
-      state.total -= action.payload.price;
+      state.total -= action.payload.price * action.payload.quantity;
       state.products = nextCart;
+      toast.error("Product removed from cart", {
+        position: "bottom-left",
+      });
+    },
+
+    decreaseCart(state, action) {
+      const itemIndex = state.products.findIndex(
+        (item) => item._id === action.payload._id
+      );
+
+      if (state.products[itemIndex].quantity > 1) {
+        state.products[itemIndex].quantity -= 1;
+
+        toast.info("Decreased product quantity", {
+          position: "bottom-left",
+        });
+      } else if (state.products[itemIndex].quantity === 1) {
+        const nextproducts = state.products.filter(
+          (item) => item._id !== action.payload._id
+        );
+
+        state.products = nextproducts;
+
+        toast.error("Product removed from cart", {
+          position: "bottom-left",
+        });
+      }
+
+      localStorage.setItem("products", JSON.stringify(state.products));
+    },
+
+    increaseCart(state, action) {
+      const itemIndex = state.products.findIndex(
+        (item) => item._id === action.payload._id
+      );
+
+      if (state.products[itemIndex].quantity > 1) {
+        state.products[itemIndex].quantity += 1;
+
+        toast.info("Decreased product quantity", {
+          position: "bottom-left",
+        });
+      } 
+
+      localStorage.setItem("products", JSON.stringify(state.products));
     },
   },
 });
 
-export const { addProduct , RemoveProduct } = cartSlice.actions;
+export const { addProduct , RemoveProduct , decreaseCart, increaseCart } = cartSlice.actions;
 export default cartSlice.reducer;
