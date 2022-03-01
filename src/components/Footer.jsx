@@ -36,8 +36,8 @@ const Logo = styled.img`
 `;
 
 const Logoo = styled.img`
-  width: 50px;
-  height: 30px;
+  width: 75px;
+  height: 35px;
   margin-top : -30px;
   ${mobile({ fontSize: "24px" })}
 `;
@@ -56,17 +56,11 @@ const SocialIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 10px;
 `;
 const Center = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({ display: "none" })}
-`;
-const Centers = styled.div`
-  flex: 1;
-  padding: 20px;
-  margin-left : -10rem;
   ${mobile({ display: "none" })}
 `;
 const Title = styled.h3`
@@ -199,6 +193,7 @@ const Footer = () => {
           <Titles>We accept</Titles>
           <Link to={`/`}>
          <Logoo src="https://i.ibb.co/BqkQ95s/28-280270-mtn-ghana-records-gh-u00a256b-in-mobile-money.jpg" />
+         <Logoo src="https://i.ibb.co/vBw6hW2/54-542683-credit-card-pay-now-visa-and-mastercard-accepted.jpg"/>
           </Link>
         </Lefts>
         <Rights>

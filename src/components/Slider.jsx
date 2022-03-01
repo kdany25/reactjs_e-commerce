@@ -61,7 +61,7 @@ const InfoContainer = styled.div`
   padding: 50px;
 `;
 const Title = styled.h1`
-  font-size: 60px;
+  font-size: 50px;
 `;
 const Desc = styled.p`
   margin: 50px 0px;

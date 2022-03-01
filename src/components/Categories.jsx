@@ -29,7 +29,7 @@ background:#fff;
 const Categories = () => {
   return (
     <>
-  <Tit><Sp>Categories</Sp></Tit>
+
     <Container>
 
       {categories.map((item) => (
