@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 export const subSlice = createSlice({
   name: "subscriber",
@@ -60,6 +61,9 @@ export const subSlice = createSlice({
     addSubscriberSuccess: (state, action) => {
       state.isFetching = false;
       state.subscribers.push(action.payload);
+      toast.success("Thank you for subscribing", {
+        position: "bottom-left",
+      });
     },
     addSubscriberFailure: (state) => {
       state.isFetching = false;
