@@ -6,7 +6,7 @@ import { addSub } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
 
 const Container = styled.div`
-  height: 30vh;
+  height: 25vh;
   background-color: #fcf5f5;
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h2`
-  font-size: 70px;
+  font-size: 40px;
 `;
 const Desc = styled.div`
   font-size: 24px;

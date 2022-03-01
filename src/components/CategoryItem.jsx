@@ -17,19 +17,21 @@ const Image = styled.img`
 
 const Info = styled.h1`
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size : 24px;
   justify-content: center;
 `;
 const Title = styled.div`
   color: white;
   margin-bottom: 17px;
   background: #100f66;
+  border-radius : 5px;
 `;
 const Button = styled.button`
 border: none;
