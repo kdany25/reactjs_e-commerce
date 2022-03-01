@@ -1,13 +1,14 @@
-import { Add, Remove } from "@material-ui/icons";
+import { CancelOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Order from "../components/Order/Order";
 import { RemoveProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
+
 
 const Container = styled.div`
   height: 100vh;
@@ -134,12 +135,11 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [modalOpen, setModalOpen] = useState(false);
-  const [product, setProduct] = useState({});
   const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(RemoveProduct({ product }));
+  const handleClick = (product) => {
+    dispatch(RemoveProduct(product));
   };
+
 
   return (
     <>
@@ -172,9 +172,7 @@ const Cart = () => {
                   </ProductDetail>
                   <PriceDetail>
                     <ProductAmountContainer>
-                      <Add onClick={product.quantity + 1} />
-                      <ProductAmount>{product.quantity}</ProductAmount>
-                      <Remove onClick={product.quantity - 1} />
+                      <CancelOutlined onClick={()=>handleClick(product)} />
                     </ProductAmountContainer>
                     <ProductPrice>
                       Rwf {product.price * product.quantity}

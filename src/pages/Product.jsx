@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
@@ -27,8 +26,7 @@ const Image = styled.img`
   object-fit: cover;
   &:hover {
     transform: scale(1.5);
-  }
-  border : 2px solid blue;
+  };
   ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
