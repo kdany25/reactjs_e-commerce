@@ -48,7 +48,7 @@ const SearchContainer = styled.div`
 `;
 const Input = styled.input`
   border: none;
-  padding: 8px;
+  padding: 10px;
   width: 100%;
   ${mobile({ width: "50px" })}
 `;
@@ -88,7 +88,7 @@ const Navbar = () => {
           <SearchContainer>
             <Input placeholder="search Product" onChange={handleChange} />
             <Link to={`/products/${name}`}>
-              <Search style={{ color: "gray", fontSize: 16 }} />
+              <Search style={{ color: "gray", fontSize: 16}} />
             </Link>
           </SearchContainer>
         </Center>
