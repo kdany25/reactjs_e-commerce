@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import { categories } from "../data";
 import CategoryItem from "./CategoryItem";
-import { mobile } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   padding: 20px;
   justify-content: space-between;
   ${mobile({ padding: "0px", flexDirection: "column" })}
+  ${thirteenmin({ padding: "0px", flexDirection: "column" })}
+  ${thirteenPro({ padding: "0px", flexDirection: "column" })}
+  ${thirteenProMax({ padding: "0px", flexDirection: "column" })}
 `;
 
 

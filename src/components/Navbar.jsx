@@ -2,7 +2,7 @@ import React from "react";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import { Badge } from "@material-ui/core";
-import { mobile } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,9 @@ import { useState } from "react";
 const Container = styled.div`
   height: 90px;
   ${mobile({ height: "50px" })}
+  ${thirteenPro({ height: "50px" })}
+  ${thirteenmin({ height: "50px" })}
+  ${thirteenProMax({ height: "50px" })}
 `;
 const Wrapper = styled.div`
   padding: 10px 20px;
@@ -18,6 +21,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   ${mobile({ padding: "10px 0px" })}
+  ${thirteenmin({ padding: "10px 0px" })}
+  ${thirteenPro({ padding: "10px 0px" })}
+  ${thirteenProMax({ padding: "10px 0px" })}
 `;
 
 const Left = styled.div`
@@ -32,6 +38,9 @@ const Logo = styled.img`
   object-fit: cover;
   margin-top: -0.4rem;
   ${mobile({ fontSize: "18px" })}
+  ${thirteenmin({ fontSize: "18px" })}
+  ${thirteenPro({ fontSize: "18px" })}
+  ${thirteenProMax({ fontSize: "18px" })}
 `;
 const Center = styled.div`
   flex: 1;
@@ -51,6 +60,9 @@ const Input = styled.input`
   padding: 10px;
   width: 100%;
   ${mobile({ width: "50px" })}
+  ${thirteenmin({ width: "50px" })}
+  ${thirteenPro({ width: "50px" })}
+  ${thirteenProMax({ width: "50px" })}
 `;
 
 const Right = styled.div`
@@ -60,6 +72,9 @@ const Right = styled.div`
   justify-content: flex-end;
   margin-top: -2rem;
   ${mobile({ flex: 2, justifyContent: "center" })}
+  ${thirteenmin({ flex: 2, justifyContent: "center" })}
+  ${thirteenPro({ flex: 2, justifyContent: "center" })}
+  ${thirteenProMax({ flex: 2, justifyContent: "center" })}
 `;
 
 const MenuItem = styled.div`
@@ -67,6 +82,9 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  ${thirteenmin({ fontSize: "12px", marginLeft: "10px" })}
+  ${thirteenPro({ fontSize: "12px", marginLeft: "10px" })}
+  ${thirteenProMax({ fontSize: "12px", marginLeft: "10px" })}
 `;
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
