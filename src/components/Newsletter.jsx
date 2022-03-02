@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { addSub } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
+import { thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
 
 const Container = styled.div`
   height: 25vh;
@@ -21,6 +22,10 @@ const Desc = styled.div`
   font-weight: 300;
   margin-bottom: 20px;
   ${mobile({ textAlign: "center" })}
+  ${thirteenmin({ textAlign: "center" })}
+  ${thirteenPro({ textAlign: "center" })}
+  ${thirteenProMax({ textAlign: "center" })}
+
 `;
 const InputContainer = styled.div`
   width: 50%;
@@ -30,6 +35,9 @@ const InputContainer = styled.div`
   justify-content: space-between;
   border: 1px solid lightgray;
   ${mobile({ width: "80%" })}
+  ${thirteenmin({ width: "80%" })}
+  ${thirteenPro({ width: "80%" })}
+  ${thirteenProMax({ width: "80%" })}
 `;
 const Input = styled.input`
   border: none;

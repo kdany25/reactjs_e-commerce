@@ -29,9 +29,7 @@ const App = () => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, [])
 
-  useEffect(() => {
-   console.log(window.location.pathname)
-  })
+
   return (
     <Router>
       <ToastContainer />

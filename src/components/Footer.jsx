@@ -8,12 +8,15 @@ import {
   WhatsApp
 } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column" })}
+  ${thirteenmin({ flexDirection: "column" })}
+  ${thirteenPro({ flexDirection: "column" })}
+  ${thirteenProMax({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -33,6 +36,9 @@ const Logo = styled.img`
   object-fit: cover;
   margin-top: -0.4rem;
   ${mobile({ fontSize: "24px" })}
+  ${thirteenmin({fontSize: "24px"  })}
+  ${thirteenPro({fontSize: "24px"  })}
+  ${thirteenProMax({fontSize: "24px"  })}
 `;
 
 const Logoo = styled.img`
@@ -40,6 +46,9 @@ const Logoo = styled.img`
   height: 40px;
   margin-top : -30px;
   ${mobile({ fontSize: "25px" })}
+  ${thirteenmin({fontSize: "25px"  })}
+  ${thirteenPro({fontSize: "25px"  })}
+  ${thirteenProMax({fontSize: "25px"  })}
 `;
 const Desc = styled.p`
   margin: 20px 0px;
@@ -61,7 +70,6 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({ display: "none" })}
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -83,6 +91,9 @@ const Right = styled.div`
   flex: 1;
   padding: 20px;
   ${mobile({ backgroundColor: "#fff8f8" })}
+  ${thirteenmin({backgroundColor: "#fff8f8"  })}
+  ${thirteenPro({backgroundColor: "#fff8f8"  })}
+  ${thirteenProMax({backgroundColor: "#fff8f8"  })}
 `;
 
 const Rights = styled.div`
@@ -91,6 +102,9 @@ const Rights = styled.div`
   margin-left : 30rem;
   font-size : 12px;
   ${mobile({ backgroundColor: "#fff8f8" })}
+  ${thirteenmin({backgroundColor: "#fff8f8"  })}
+  ${thirteenPro({backgroundColor: "#fff8f8"  })}
+  ${thirteenProMax({backgroundColor: "#fff8f8"  })}
 `;
 
 const ContactItem = styled.div`

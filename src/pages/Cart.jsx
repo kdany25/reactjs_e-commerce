@@ -2,13 +2,13 @@ import { Add, Remove, CancelOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
-import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Order from "../components/Order/Order";
 import { RemoveProduct, decreaseCart, increaseCart } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
 
 const Container = styled.div`
   height: 100vh;
@@ -18,6 +18,9 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 20px;
   ${mobile({ padding: "10px" })}
+  ${thirteenmin({ padding: "10px" })}
+  ${thirteenPro({ padding: "10px" })}
+  ${thirteenProMax({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -29,6 +32,9 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
+  ${thirteenmin({ flexDirection: "column" })}
+  ${thirteenPro({ flexDirection: "column" })}
+  ${thirteenProMax({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -41,6 +47,10 @@ const Product = styled.div`
   justify-content: space-between;
 
   ${mobile({ flexDirection: "column" })}
+  ${thirteenmin({ flexDirection: "column" })}
+  ${thirteenPro({ flexDirection: "column" })}
+  ${thirteenProMax({ flexDirection: "column" })}
+  
 `;
 
 const ProductDetail = styled.div`
@@ -90,12 +100,18 @@ const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
   ${mobile({ margin: "5px 15px" })}
+  ${thirteenmin({ margin: "5px 15px" })}
+  ${thirteenPro({ margin: "5px 15px" })}
+  ${thirteenProMax({ margin: "5px 15px" })}
 `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
   ${mobile({ marginBottom: "20px" })}
+  ${thirteenmin({ marginBottom: "20px" })}
+  ${thirteenPro({ marginBottom: "20px" })}
+  ${thirteenProMax({ marginBottom: "20px" })}
 `;
 
 const Summary = styled.div`
@@ -129,25 +145,6 @@ const Button = styled.button`
   font-weight: 600;
   border: none;
   border-radius: 5px;
-`;
-
-const Top = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-`;
-
-const TopButton = styled.button`
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
-  background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
 `;
 
 const Cart = () => {
