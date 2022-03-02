@@ -1,4 +1,5 @@
 import Product from "./pages/Product";
+import React, { useEffect } from 'react';
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import SignUp from "./pages/SignUp";
@@ -9,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import About from "./pages/About-Us";
+import ReactGA from 'react-ga';
 import "./App.css";
 
 import {
@@ -20,6 +22,16 @@ import {
 import { useSelector } from "react-redux";
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
+  
+  useEffect(() => {
+    ReactGA.initialize('305454101');
+    // To Report Page View 
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
+  useEffect(() => {
+   console.log(window.location.pathname)
+  })
   return (
     <Router>
       <ToastContainer />
