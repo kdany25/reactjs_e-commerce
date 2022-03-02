@@ -2,8 +2,8 @@ import { useState } from "react";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import { sliderItems } from "../data";
-import { mobile , mobileProMax } from "../responsive";
-import {Link} from "react-router-dom"
+import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -11,9 +11,8 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  margin-top : -1rem;
+  margin-top: -1rem;
   ${mobile({ display: "none" })}
-  ${mobileProMax({ display: "none" })}
 `;
 const Arrow = styled.div`
   width: 50px;
@@ -100,7 +99,7 @@ const Slider = () => {
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
               <Link to="/products">
-              <Button  >SHOP NOW get 30% off</Button>
+                <Button>SHOP NOW get 30% off</Button>
               </Link>
             </InfoContainer>
           </Slide>
