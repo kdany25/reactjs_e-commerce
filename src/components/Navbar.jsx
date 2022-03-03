@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  margin-top : 0.4rem;
+  margin-top : 1rem;
   justify-content: space-between;
   ${mobile({ height: "50px",padding: "0px" })}
   ${thirteenmin({height: "50px",padding: "0px" })}
@@ -36,7 +36,6 @@ const Left = styled.div`
 const Logo = styled.img`
   width: 65px;
   height: 65px;
-  margin-top: -0.4rem;
   ${mobile({ height: "50px" })}
   ${thirteenmin({ height: "50px" })}
   ${thirteenPro({ height: "50px"})}
