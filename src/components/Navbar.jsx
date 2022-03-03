@@ -19,11 +19,12 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   align-items: center;
+  margin-top : 0.4rem;
   justify-content: space-between;
-  ${mobile({ height: "50px",padding: "0px", border : "2px solid blue" })}
-  ${thirteenmin({height: "50px",padding: "0px", border : "2px solid blue" })}
-  ${thirteenPro({ height: "50px",padding: "0px", border : "2px solid blue" })}
-  ${thirteenProMax({ height: "50px",padding: "0px", border : "2px solid blue" })}
+  ${mobile({ height: "50px",padding: "0px" })}
+  ${thirteenmin({height: "50px",padding: "0px" })}
+  ${thirteenPro({ height: "50px",padding: "0px" })}
+  ${thirteenProMax({ height: "50px",padding: "0px" })}
 `;
 
 const Left = styled.div`
