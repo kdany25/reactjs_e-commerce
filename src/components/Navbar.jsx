@@ -20,10 +20,10 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ padding: "10px 0px" })}
-  ${thirteenmin({ padding: "10px 0px" })}
-  ${thirteenPro({ padding: "10px 0px" })}
-  ${thirteenProMax({ padding: "10px 0px" })}
+  ${mobile({ height: "50px",padding: "0px", border : "2px solid blue" })}
+  ${thirteenmin({height: "50px",padding: "0px", border : "2px solid blue" })}
+  ${thirteenPro({ height: "50px",padding: "0px", border : "2px solid blue" })}
+  ${thirteenProMax({ height: "50px",padding: "0px", border : "2px solid blue" })}
 `;
 
 const Left = styled.div`
@@ -35,12 +35,11 @@ const Left = styled.div`
 const Logo = styled.img`
   width: 65px;
   height: 65px;
-  object-fit: cover;
   margin-top: -0.4rem;
-  ${mobile({ fontSize: "18px" })}
-  ${thirteenmin({ fontSize: "18px" })}
-  ${thirteenPro({ fontSize: "18px" })}
-  ${thirteenProMax({ fontSize: "18px" })}
+  ${mobile({ height: "50px" })}
+  ${thirteenmin({ height: "50px" })}
+  ${thirteenPro({ height: "50px"})}
+  ${thirteenProMax({height: "50px"  })}
 `;
 const Center = styled.div`
   flex: 1;
@@ -59,10 +58,10 @@ const Input = styled.input`
   border: none;
   padding: 10px;
   width: 100%;
-  ${mobile({ width: "50px" })}
-  ${thirteenmin({ width: "50px" })}
-  ${thirteenPro({ width: "50px" })}
-  ${thirteenProMax({ width: "50px" })}
+  ${mobile({ width: "120px" , padding : "5px" })}
+  ${thirteenmin({ width: "120px" , padding : "5px" })}
+  ${thirteenPro({ width: "120px" , padding : "5px" })}
+  ${thirteenProMax({ width: "120px" , padding : "5px" })}
 `;
 
 const Right = styled.div`
@@ -81,10 +80,10 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
-  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
-  ${thirteenmin({ fontSize: "12px", marginLeft: "10px" })}
-  ${thirteenPro({ fontSize: "12px", marginLeft: "10px" })}
-  ${thirteenProMax({ fontSize: "12px", marginLeft: "10px" })}
+  ${mobile({ fontSize: "12px", marginLeft: "30px" })}
+  ${thirteenmin({ fontSize: "12px", marginLeft: "30px" })}
+  ${thirteenPro({ fontSize: "12px", marginLeft: "30px" })}
+  ${thirteenProMax({ fontSize: "12px", marginLeft: "30px" })}
 `;
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);

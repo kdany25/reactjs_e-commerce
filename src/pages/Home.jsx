@@ -8,19 +8,25 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import NewArrivals from "../components/NewArrivals";
-const Tit = styles.h1`
-width: 40%; 
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+const Tit = styles.h3`
+width: 50%; 
 align-items : center;
 justify-content : center;
 border-bottom: 1px solid #000; 
 line-height: 0.1em;
 margin: 10px 0 20px; 
 margin-top: 1rem;
+
+${thirteenmin({ width:" 60%"  })}
+${thirteenPro({width:" 60%"  })}
+${thirteenProMax({width:" 60%"  })}
+${mobile({ width:" 60%"})}
 `;
 
 const Sp = styles.span`
 background:#fff; 
-    padding:0 10px; 
+padding:0 10px; 
 `;
 
 const Home = () => {
