@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { addSub } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
-import { thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 
 const Container = styled.div`
   height: 25vh;
@@ -25,6 +25,7 @@ const Desc = styled.div`
   ${thirteenmin({ textAlign: "center" })}
   ${thirteenPro({ textAlign: "center" })}
   ${thirteenProMax({ textAlign: "center" })}
+  ${elevenproMax({ textAlign: "center" })}
 
 `;
 const InputContainer = styled.div`
@@ -38,6 +39,7 @@ const InputContainer = styled.div`
   ${thirteenmin({ width: "80%" })}
   ${thirteenPro({ width: "80%" })}
   ${thirteenProMax({ width: "80%" })}
+  ${elevenproMax({ width: "80%" })}
 `;
 const Input = styled.input`
   border: none;

@@ -7,6 +7,7 @@ import {
   thirteenPro,
   thirteenmin,
   thirteenProMax,
+  elevenproMax
 } from "../responsive";
 import { Link } from "react-router-dom";
 
@@ -42,6 +43,7 @@ const Arrow = styled.div`
   ${thirteenProMax({ height: "15px", width: "15px" })}
   ${thirteenmin({ height: "15px", width: "15px" })}
   ${thirteenPro({ height: "15px", width: "15px" })}
+  ${elevenproMax({ height: "15px", width: "15px" })}
 `;
 
 const Wrapper = styled.div`
@@ -53,6 +55,7 @@ const Wrapper = styled.div`
   ${thirteenmin({ height: " 90%" })}
   ${thirteenPro({ height: " 90%" })}
   ${mobile({ height: " 90%" })}
+  ${elevenproMax({ height: " 90%" })}
 `;
 
 const Slide = styled.div`
@@ -65,6 +68,7 @@ const Slide = styled.div`
   ${thirteenPro({ height: "15vh" })}
   ${thirteenmin({ height: "15vh" })}
   ${mobile({ height: "15vh" })}
+  ${elevenproMax({ height: "15vh" })}
 `;
 
 const ImageContainer = styled.div`
@@ -74,6 +78,7 @@ const ImageContainer = styled.div`
   ${thirteenPro({ height: " 80%", flex: "1" })}
   ${thirteenmin({ height: " 80%", flex: "1" })}
   ${mobile({ height: " 80%", flex: "1" })}
+  ${elevenproMax({ height: " 80%", flex: "1" })}
 `;
 const Image = styled.img`
   height: 100%;
@@ -81,6 +86,7 @@ const Image = styled.img`
   ${thirteenPro({ height: "100%" })}
   ${thirteenmin({ height: "100%" })}
   ${mobile({ height: "100%" })}
+  ${elevenproMax({ height: "100%" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
@@ -89,6 +95,7 @@ const InfoContainer = styled.div`
   ${thirteenPro({ padding: "0px", flex: "2 " })}
   ${thirteenmin({ padding: "0px", flex: "2 " })}
   ${mobile({ padding: "0px", flex: "2 " })}
+  ${elevenproMax({ padding: "0px", flex: "2 " })}
 `;
 const Title = styled.h1`
   font-size: 30px;
@@ -96,6 +103,7 @@ const Title = styled.h1`
   ${thirteenPro({ fontSize: "13px" })}
   ${thirteenmin({ fontSize: "13px" })}
   ${mobile({ fontSize: "13px" })}
+  ${elevenproMax({ fontSize: "13px" })}
 `;
 const Desc = styled.p`
   margin: 50px 0px;
@@ -121,6 +129,12 @@ const Desc = styled.p`
     margin: "5px",
   })}
   ${mobile({
+    fontSize: "9px",
+    fontweight: "300",
+    letterspacing: "1px",
+    margin: "5px",
+  })}
+  ${elevenproMax({
     fontSize: "9px",
     fontweight: "300",
     letterspacing: "1px",

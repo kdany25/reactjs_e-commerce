@@ -8,7 +8,7 @@ import Order from "../components/Order/Order";
 import { RemoveProduct, decreaseCart, increaseCart } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 
 const Container = styled.div`
   height: 100vh;
@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   ${thirteenmin({ padding: "10px" })}
   ${thirteenPro({ padding: "10px" })}
   ${thirteenProMax({ padding: "10px" })}
+  ${elevenproMax({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -35,6 +36,7 @@ const Bottom = styled.div`
   ${thirteenmin({ flexDirection: "column" })}
   ${thirteenPro({ flexDirection: "column" })}
   ${thirteenProMax({ flexDirection: "column" })}
+  ${elevenproMax({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -50,6 +52,7 @@ const Product = styled.div`
   ${thirteenmin({ flexDirection: "column" })}
   ${thirteenPro({ flexDirection: "column" })}
   ${thirteenProMax({ flexDirection: "column" })}
+  ${elevenproMax({ flexDirection: "column" })}
   
 `;
 
@@ -103,6 +106,7 @@ const ProductAmount = styled.div`
   ${thirteenmin({ margin: "5px 15px" })}
   ${thirteenPro({ margin: "5px 15px" })}
   ${thirteenProMax({ margin: "5px 15px" })}
+  ${elevenproMax({ margin: "5px 15px" })}
 `;
 
 const ProductPrice = styled.div`
@@ -112,6 +116,7 @@ const ProductPrice = styled.div`
   ${thirteenmin({ marginBottom: "20px" })}
   ${thirteenPro({ marginBottom: "20px" })}
   ${thirteenProMax({ marginBottom: "20px" })}
+  ${elevenproMax({ marginBottom: "20px" })}
 `;
 
 const Summary = styled.div`

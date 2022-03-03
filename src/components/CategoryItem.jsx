@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 
 const Container = styled.div`
   flex: 1;
@@ -12,7 +12,10 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  ${mobile({ height: "40vh" })}
+  ${elevenproMax({ height: "40vh" })}
+  ${thirteenPro({ height: "40vh" })}
+  ${thirteenProMax({ height: "40vh" })}
+  ${thirteenmin({ height: "40vh" })}
 `;
 
 const Info = styled.h1`

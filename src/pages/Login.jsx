@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { login } from "../redux/apiCalls";
@@ -26,6 +26,7 @@ const Wrapper = styled.div`
   ${thirteenmin({ width: "75%" })};
   ${thirteenPro({ width: "75%" })};
   ${thirteenProMax({ width: "75%" })};
+  ${elevenproMax({ width: "75%" })};
   
 `;
 

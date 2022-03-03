@@ -8,9 +8,9 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import NewArrivals from "../components/NewArrivals";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax} from "../responsive";
 const Tit = styles.h3`
-width: 50%; 
+width: 40%; 
 align-items : center;
 justify-content : center;
 border-bottom: 1px solid #000; 
@@ -22,6 +22,7 @@ ${thirteenmin({ width:" 60%"  })}
 ${thirteenPro({width:" 60%"  })}
 ${thirteenProMax({width:" 60%"  })}
 ${mobile({ width:" 60%"})}
+${elevenproMax({ width:" 60%"})}
 `;
 
 const Sp = styles.span`
