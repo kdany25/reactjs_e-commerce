@@ -4,7 +4,7 @@ import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
 
@@ -25,6 +25,7 @@ const Filter = styled.div`
   ${thirteenmin({ width: "0px 20px", display: "flex", flexDirection: "column" })}
   ${thirteenPro({ width: "0px 20px", display: "flex", flexDirection: "column" })}
   ${thirteenProMax({ width: "0px 20px", display: "flex", flexDirection: "column" })}
+  ${elevenproMax({ width: "0px 20px", display: "flex", flexDirection: "column" })}
 `;
 
 const FilterText = styled.span`
@@ -35,6 +36,7 @@ const FilterText = styled.span`
   ${thirteenmin({ marginRight: "0px" })}
   ${thirteenPro({ marginRight: "0px" })}
   ${thirteenProMax({ marginRight: "0px" })}
+  ${elevenproMax({ marginRight: "0px" })}
 `;
 
 const Select = styled.select`
@@ -44,6 +46,7 @@ const Select = styled.select`
   ${thirteenmin({ margin: "10px 0px" })}
   ${thirteenPro({ margin: "10px 0px" })}
   ${thirteenProMax({ margin: "10px 0px" })}
+  ${elevenproMax({ margin: "10px 0px" })}
 `;
 const Option = styled.option``;
 

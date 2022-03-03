@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { categories } from "../data";
 import CategoryItem from "./CategoryItem";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 
 const Container = styled.div`
   display: flex;
@@ -11,6 +11,7 @@ const Container = styled.div`
   ${thirteenmin({ padding: "0px", flexDirection: "column" })}
   ${thirteenPro({ padding: "0px", flexDirection: "column" })}
   ${thirteenProMax({ padding: "0px", flexDirection: "column" })}
+  ${elevenproMax({ padding: "0px", flexDirection: "column" })}
 `;
 
 

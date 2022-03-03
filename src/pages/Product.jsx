@@ -4,7 +4,7 @@ import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { Add, Remove } from "@material-ui/icons";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax,elevenproMax } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethod";
@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   ${thirteenmin({ padding: "10px", flexDirection:"column" })}
   ${thirteenPro({ padding: "10px", flexDirection:"column" })}
   ${thirteenProMax({ padding: "10px", flexDirection:"column" })}
+  ${elevenproMax({ padding: "10px", flexDirection:"column" })}
 `;
 const ImgContainer = styled.div`
   flex: 1;
@@ -34,6 +35,7 @@ const Image = styled.img`
   ${thirteenmin({ height: "40vh" })}
   ${thirteenPro({ height: "40vh" })}
   ${thirteenProMax({ height: "40vh" })}
+  ${elevenproMax({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
@@ -42,6 +44,7 @@ const InfoContainer = styled.div`
   ${thirteenmin({ padding: "10px" })}
   ${thirteenPro({ padding: "10px" })}
   ${thirteenProMax({ padding: "10px" })}
+  ${elevenproMax({ padding: "10px" })}
 `;
 const Title = styled.h1`
   font-weight: 200;
@@ -63,6 +66,7 @@ const FilterContainer = styled.div`
   ${thirteenmin({ width: "100%" })}
   ${thirteenPro({ width: "100%" })}
   ${thirteenProMax({ width: "100%" })}
+  ${elevenproMax({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -100,6 +104,7 @@ const AddContainer = styled.div`
   ${thirteenmin({ width: "100%" })}
   ${thirteenPro({ width: "100%" })}
   ${thirteenProMax({ width: "100%" })}
+  ${elevenproMax({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`

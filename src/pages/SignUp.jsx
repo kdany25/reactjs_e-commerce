@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -25,6 +25,7 @@ const Wrapper = styled.div`
   ${thirteenmin({ width: "75%" })}
   ${thirteenPro({ width: "75%" })}
   ${thirteenProMax({ width: "75%" })}
+  ${elevenproMax({ width: "75%" })}
 `;
 
 const Title = styled.h1`

@@ -8,7 +8,7 @@ import {
   WhatsApp
 } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -17,6 +17,7 @@ const Container = styled.div`
   ${thirteenmin({ flexDirection: "column" })}
   ${thirteenPro({ flexDirection: "column" })}
   ${thirteenProMax({ flexDirection: "column" })}
+  ${elevenproMax({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -39,6 +40,7 @@ const Logo = styled.img`
   ${thirteenmin({fontSize: "24px"  })}
   ${thirteenPro({fontSize: "24px"  })}
   ${thirteenProMax({fontSize: "24px"  })}
+  ${elevenproMax({fontSize: "24px"  })}
 `;
 
 const Logoo = styled.img`
@@ -49,6 +51,7 @@ const Logoo = styled.img`
   ${thirteenmin({fontSize: "25px"  })}
   ${thirteenPro({fontSize: "25px"  })}
   ${thirteenProMax({fontSize: "25px"  })}
+  ${elevenproMax({fontSize: "25px"  })}
 `;
 const Desc = styled.p`
   margin: 20px 0px;
@@ -94,6 +97,7 @@ const Right = styled.div`
   ${thirteenmin({backgroundColor: "#fff8f8"  })}
   ${thirteenPro({backgroundColor: "#fff8f8"  })}
   ${thirteenProMax({backgroundColor: "#fff8f8"  })}
+  ${elevenproMax({backgroundColor: "#fff8f8"  })}
 `;
 
 const Rights = styled.div`
@@ -105,6 +109,7 @@ const Rights = styled.div`
   ${thirteenmin({backgroundColor: "#fff8f8"  })}
   ${thirteenPro({backgroundColor: "#fff8f8"  })}
   ${thirteenProMax({backgroundColor: "#fff8f8"  })}
+  ${elevenproMax({backgroundColor: "#fff8f8"  })}
 `;
 
 const ContactItem = styled.div`

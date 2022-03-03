@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { mobile ,thirteenPro ,thirteenmin , thirteenProMax } from "../responsive";
+import {thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
 
 const Container = styled.div `
 height : 30px;
@@ -13,6 +13,7 @@ font-weight: 500;
 ${thirteenProMax({ display : "none"})}
 ${thirteenPro({ display : "none" })}
 ${thirteenmin({  display : "none" })}
+${elevenproMax({  display : "none" })}
 `;
 const Announcement = () => {
   return (
