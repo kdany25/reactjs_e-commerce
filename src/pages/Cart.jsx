@@ -177,7 +177,7 @@ const Cart = () => {
         <Announcement />
         <Navbar />
         <Wrapper>
-          <Title>CART</Title>
+          <Title> your CART</Title>
           {/* <Top>
             <Link to="/products" style={{ color: "black" }}>
               <TopButton>CONTINUE SHOPPING</TopButton>
