@@ -22,6 +22,7 @@ const Container = styled.div`
   ${thirteenmin({ height: "15vh", margintop: "2rem" })}
   ${thirteenPro({ height: "15vh", margintop: "2rem" })}
   ${thirteenProMax({ height: "15vh", margintop: "2rem" })}
+  ${elevenproMax({ height: "15vh", margintop: "2rem" })}
 `;
 const Arrow = styled.div`
   width: 50px;
