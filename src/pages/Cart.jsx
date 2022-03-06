@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Order from "../components/Order/Order";
-import { RemoveProduct, decreaseCart, increaseCart } from "../redux/cartRedux";
+import { RemoveProduct, decreaseCart, increaseCart , clearCart } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { mobile ,thirteenPro ,thirteenmin , thirteenProMax , elevenproMax } from "../responsive";
@@ -151,6 +151,22 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
 `;
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+`;
+
+const TopButton = styled.button`
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: ${(props) => props.type === "filled" && "none"};
+  background-color: ${(props) =>
+    props.type === "filled" ? "black" : "transparent"};
+  color: ${(props) => props.type === "filled" && "white"};
+`;
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -169,6 +185,11 @@ const Cart = () => {
     dispatch(increaseCart(product));
   };
 
+  const handleclearCart = () => {
+    dispatch(clearCart());
+  };
+
+
   return (
     <>
       <Container>
@@ -178,11 +199,11 @@ const Cart = () => {
         <Navbar />
         <Wrapper>
           <Title> your CART</Title>
-          {/* <Top>
-            <Link to="/products" style={{ color: "black" }}>
-              <TopButton>CONTINUE SHOPPING</TopButton>
-            </Link>
-          </Top> */}
+          <Top>
+            
+              <TopButton onClick={()=>handleclearCart()}>Clear cart</TopButton>
+          
+          </Top>
           <Bottom>
             <Info>
               {cart.products.length === 0 ? (
