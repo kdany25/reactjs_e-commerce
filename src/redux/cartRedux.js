@@ -60,6 +60,7 @@ const cartSlice = createSlice({
 
       if (state.products[itemIndex].quantity > 1) {
         state.products[itemIndex].quantity += 1;
+     
 
         toast.success("you added qantity of product", {
           position: "bottom-left",
