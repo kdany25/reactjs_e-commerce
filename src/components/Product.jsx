@@ -124,7 +124,6 @@ const Product = ({ item }) => {
       <Rat>
         <Rating rating="3.5" ></Rating>
       </Rat>
-
       <Cons>
       <Iconn>
       <Price>{item.price}rwf</Price>
