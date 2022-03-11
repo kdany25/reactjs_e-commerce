@@ -69,7 +69,7 @@ export default function Order({ setOpenModal, cart }) {
                   <input
                     name="address"
                     type="text"
-                    placeholder="KN234 | Nyamirambo"
+                    placeholder="KN234 | Kanombe"
                     onChange={handleChange}
                   />
                 </div>
